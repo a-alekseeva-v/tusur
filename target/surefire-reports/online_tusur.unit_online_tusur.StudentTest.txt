@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: online_tusur.unit_online_tusur.StudentTest
 -------------------------------------------------------------------------------
-Tests run: 9, Failures: 5, Errors: 0, Skipped: 0, Time elapsed: 0.007 s <<< FAILURE! - in online_tusur.unit_online_tusur.StudentTest
-testLastName1  Time elapsed: 0.001 s  <<< FAILURE!
+Tests run: 9, Failures: 5, Errors: 0, Skipped: 0, Time elapsed: 0.063 s <<< FAILURE! - in online_tusur.unit_online_tusur.StudentTest
+testLastName1  Time elapsed: 0.027 s  <<< FAILURE!
 org.opentest4j.AssertionFailedError: expected: <Петров-Иванов> but was: <Петров-иванов>
 	at online_tusur.unit_online_tusur.StudentTest.testLastName1(StudentTest.java:92)
 
@@ -14,11 +14,11 @@ testName1  Time elapsed: 0 s  <<< FAILURE!
 org.opentest4j.AssertionFailedError: expected: <Анна-Мария> but was: <Анна-мария>
 	at online_tusur.unit_online_tusur.StudentTest.testName1(StudentTest.java:154)
 
-testName2  Time elapsed: 0 s  <<< FAILURE!
+testName2  Time elapsed: 0.005 s  <<< FAILURE!
 org.opentest4j.AssertionFailedError: expected: <Флоренс Луиза> but was: <Флоренс луиза>
 	at online_tusur.unit_online_tusur.StudentTest.testName2(StudentTest.java:164)
 
-test3_assert  Time elapsed: 0.001 s  <<< FAILURE!
+test3_assert  Time elapsed: 0 s  <<< FAILURE!
 org.opentest4j.AssertionFailedError: expected: <50> but was: <18>
 	at online_tusur.unit_online_tusur.StudentTest.test3_assert(StudentTest.java:48)
 

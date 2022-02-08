@@ -199,7 +199,7 @@ public class StudentTest {
 	  void testNameInvalid3() {
 		String imena = "123456";
 		s.setFirstName(imena);
-	    String expectedName = "123456";
+	    String expectedName = "Vvedite name verno";
 	    String actualsName=s.getFirstName();
 	    assertEquals(expectedName, actualsName);	
 	  }
