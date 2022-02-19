@@ -1,3 +1,7 @@
+/*параметризированные тесты*/
+/*тестNG позволяет пользователям передавать значения параметров тестовым методам как аргументы. 
+ * Это возможно сделать с помощью аннотации @Parameters*/
+
 package online_tusur.unit_online_tusur;
 import static org.testng.Assert.assertEquals;
 

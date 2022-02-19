@@ -1,3 +1,5 @@
+/*параметризированные тесты*/
+/*Практическое задание 5. Параметризированные тесты в TestNG*/
 package online_tusur.unit_online_tusur;
 import static org.testng.Assert.assertEquals;
 import org.testng.annotations.DataProvider;

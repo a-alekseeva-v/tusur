@@ -1,5 +1,6 @@
+/*TestNG*/
+/*Группы и зависимости тестов для проекта Студент*/
 package online_tusur.unit_online_tusur;
-
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;

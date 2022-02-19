@@ -1,3 +1,6 @@
+/*параметризированные тесты*/
+/*Практическое задание 3. Параметризированные тесты в JUnit 5
+ * Практическое задание 4. Динамические тесты в JUnit 5*/
 package online_tusur.unit_online_tusur;
 
 import static org.junit.jupiter.api.Assertions.*;

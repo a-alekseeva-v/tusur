@@ -3,11 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="NewTestNGparam">
+      <class name="online_tusur.unit_online_tusur.FirstNameTest">
         <methods>
-          <include name="params"/>
+          <include name="SecondName" invocation-numbers="4 5"/>
+          <include name="age_student" invocation-numbers="4"/>
+          <include name="firstName" invocation-numbers="2 5"/>
         </methods>
-      </class> <!-- NewTestNGparam -->
+      </class> <!-- online_tusur.unit_online_tusur.FirstNameTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

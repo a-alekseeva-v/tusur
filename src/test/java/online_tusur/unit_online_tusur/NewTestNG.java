@@ -1,3 +1,4 @@
+/*тест NG,Основные аннотации */
 package online_tusur.unit_online_tusur;
 
 import org.testng.annotations.* ;

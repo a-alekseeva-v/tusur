@@ -1,3 +1,6 @@
+/*Практическое задание 2. 
+ * Тестовые методы и аннотации JUnit5*/
+
 package online_tusur.unit_online_tusur;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
