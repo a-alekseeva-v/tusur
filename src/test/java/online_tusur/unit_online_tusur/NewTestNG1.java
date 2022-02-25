@@ -20,17 +20,26 @@ public class NewTestNG1 {
 	
 	@BeforeClass()
 	public void setUp() {
+		  long id=Thread.currentThread().getId();
+		  System.out.print("thread="+id);
+		  System.out.println("setUp");
 		arrstudents=new ArrayList<Student>();
 				
 	}
 	//очистка нашей коллекции
 	@AfterClass()
 	public void teamDown () {
+		  long id=Thread.currentThread().getId();
+		  System.out.print("thread="+id);
+		  System.out.println("teamDown");
 		arrstudents.clear();
 	}
 	
 	@Test(groups={"StudentTest"})
 	public void testAge1() {
+		  long id=Thread.currentThread().getId();
+		  System.out.print("thread="+id);
+		  System.out.println("testAge1");
 		int age=30;
 		s.setAge(age);
 		int expectedage=30;
@@ -39,6 +48,9 @@ public class NewTestNG1 {
 	
 	@Test(groups={"StudentTest"},enabled=false)
 	public void testAge2() {
+		  long id=Thread.currentThread().getId();
+		  System.out.print("thread="+id);
+		  System.out.println("testAge2");
 		int age=50;
 		s.setAge(age);
 		int expectedage=50;
@@ -48,6 +60,9 @@ public class NewTestNG1 {
 	/*проверим, что коллекция пустая*/
 	@Test(priority=0,groups={"StudentCollection"})
 	public void testEmptyCollection() {
+		  long id=Thread.currentThread().getId();
+		  System.out.print("thread="+id);
+		  System.out.println("testEmptyCollection");
 	assertTrue(arrstudents.isEmpty());
 	}
 	
@@ -55,6 +70,9 @@ public class NewTestNG1 {
 	/*добавляем студентов*/
 	@Test(priority=1,groups= {"StudentCollection"})
 	public void testItemCollection() {
+		  long id=Thread.currentThread().getId();
+		  System.out.print("thread="+id);
+		  System.out.println("testItemCollection");
 	 int k=arrstudents.size();
 	 arrstudents.add(new Student("Piter","Men",35));
 	 assertEquals(k+1,arrstudents.size());
@@ -63,6 +81,9 @@ public class NewTestNG1 {
 	/*проверим, что коллекция непустая*/
 	@Test(priority=2,groups= {"StudentCollection"},dependsOnMethods= {"testItemCollection"})
 	public void testNotEmptyCollection() {
+		  long id=Thread.currentThread().getId();
+		  System.out.print("thread="+id);	
+		  System.out.println("testNotEmptyCollection");
 	assertFalse(arrstudents.isEmpty())	;
 	}
 	

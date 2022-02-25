@@ -11,7 +11,7 @@ import org.testng.annotations.Test;
 
 public class TestNGFactory2{
 
-	@DataProvider(name="firstNameProvider")
+	@DataProvider(name="firstNameProvider" ,parallel=true)
 	public static Object[]firstNameProvider()
 	{		return new Object[] {
 			new Student("Ivan","Ivanov",25),
@@ -27,9 +27,12 @@ public class TestNGFactory2{
 		this.s=t;
 	 }
      
-	@Test
+	@Test(threadPoolSize=5)
 	public void firstName()
 	{
+		long id=Thread.currentThread().getId();
+	    System.out.println("thread="+id);	
+		
 	/*проверяем, что наши геттеры возвращают не нулевые значения*/		
 	Assert.assertNotNull(s.getFirstName());
 	Assert.assertNotNull(s.getLastName());

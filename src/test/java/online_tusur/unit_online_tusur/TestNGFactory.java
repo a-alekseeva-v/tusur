@@ -20,7 +20,7 @@ public class TestNGFactory {
 //создаём класс, где будем прописывать тесты	
 class FirstNameTest	{
 	
-	@DataProvider(name="firstNameProvider")
+	@DataProvider(name="firstNameProvider",parallel=true)
 	public Object[][] firstNameProvider()
 	{
 		return new Object[][] {
@@ -32,23 +32,29 @@ class FirstNameTest	{
 			{"Sil de Royz","Anna-Maria", 18,new Student("Anna-Maria", "Sil de Royz", 51)}
 		};
 	}
-/*нащи данные будем передавать конструктору*/
 	
-@Test(dataProvider="firstNameProvider")
+@Test(dataProvider="firstNameProvider", threadPoolSize=4)
 	public void firstName(String surname,String name,int age, Student t )
-	{	
+	{	long id=Thread.currentThread().getId();
+    System.out.print("first name   ");
+	System.out.println("thread="+id);	
+    
 	Assert.assertEquals(name, t.getFirstName());
 
 	}
-@Test(dataProvider="firstNameProvider")
+@Test(dataProvider="firstNameProvider", threadPoolSize=4)
 public void SecondName(String surname,String name,int age, Student t )
-{
+{long id=Thread.currentThread().getId();
+System.out.print("second name    ");
+System.out.println("thread="+id);	
 Assert.assertEquals(surname, t.getLastName());
 	
 }
-@Test(dataProvider="firstNameProvider")
+@Test(dataProvider="firstNameProvider", threadPoolSize=4)
 public void age_student(String surname,String name,int age, Student t )
-{	
+{	long id=Thread.currentThread().getId();
+System.out.print("age    ");
+System.out.println("thread="+id);	
 Assert.assertEquals(age, t.getAge());
 
 }

@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
-  <test thread-count="5" name="Default test(failed)">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
+  <listeners>
+    <listener class-name="online_tusur.unit_online_tusur.CustomListener"/>
+  </listeners>
+  <test thread-count="5" name="Test(failed)">
     <classes>
       <class name="online_tusur.unit_online_tusur.FirstNameTest">
         <methods>
-          <include name="SecondName" invocation-numbers="4 5"/>
+          <include name="SecondName" invocation-numbers="5 4"/>
           <include name="age_student" invocation-numbers="4"/>
-          <include name="firstName" invocation-numbers="2 5"/>
+          <include name="firstName" invocation-numbers="5 2"/>
         </methods>
       </class> <!-- online_tusur.unit_online_tusur.FirstNameTest -->
     </classes>
-  </test> <!-- Default test(failed) -->
-</suite> <!-- Failed suite [Default suite] -->
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->

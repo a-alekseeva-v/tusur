@@ -6,8 +6,10 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.parallel.Execution;
+import org.junit.jupiter.api.parallel.ExecutionMode;
 
-
+@Execution(ExecutionMode.CONCURRENT)
 public class StudentTest {
 	/*объект тестового класса  Student*/
 	private Student s = new Student();	 	   
@@ -24,6 +26,10 @@ public class StudentTest {
 	    int expectedAge = 26;
 	    /*секция действия, получаем фактическое*/
 	    int actualsAge=s.getAge();
+	    
+	    long id=Thread.currentThread().getId();
+	    System.out.println("thread="+id);
+	    
 	    /*секция проверки*/
 	    assertEquals(expectedAge, actualsAge);	
 
@@ -36,6 +42,8 @@ public class StudentTest {
 		s.setAge(age);
 	    int expectedAge = 18;
 	    int actualsAge=s.getAge();
+	    long id=Thread.currentThread().getId();
+	    System.out.println("thread="+id);
 	     assertEquals(expectedAge, actualsAge);	
 	  }
 	  
@@ -48,6 +56,8 @@ public class StudentTest {
 		s.setAge(age);
 	    int expectedAge = 50;
 	    int actualsAge=s.getAge();
+	    long id=Thread.currentThread().getId();
+	    System.out.println("thread="+id);
 	     assertEquals(expectedAge, actualsAge);	
 	  }
 	  
@@ -61,6 +71,8 @@ public class StudentTest {
 		  s.setAge(age);
 		  int expectedAge = 18;
 		  int actualsAge=s.getAge();
+		   long id=Thread.currentThread().getId();
+		    System.out.println("thread="+id);
 		  assertEquals(expectedAge, actualsAge);	  
 	  }
 	  
@@ -71,6 +83,8 @@ public class StudentTest {
 		  s.setAge(age);
 		  int expectedAge = 25;
 		  int actualsAge=s.getAge();
+		   long id=Thread.currentThread().getId();
+		    System.out.println("thread="+id);
 		  assertEquals(expectedAge, actualsAge);	  
 	  }
 	  
@@ -81,6 +95,8 @@ public class StudentTest {
 		  s.setAge(age);
 		  int expectedAge = 18;
 		  int actualsAge=s.getAge();
+		   long id=Thread.currentThread().getId();
+		    System.out.println("thread="+id);
 		  assertEquals(expectedAge, actualsAge);	  
 	  }
 	  
@@ -92,6 +108,8 @@ public class StudentTest {
 		s.setLastName(fio);
 	    String expectedName = "Петров-Иванов";
 	    String actualsName=s.getLastName();
+	    long id=Thread.currentThread().getId();
+	    System.out.println("thread="+id);
 	    assertEquals(expectedName, actualsName);	
 	  }
 	  
@@ -102,6 +120,8 @@ public class StudentTest {
 		s.setLastName(fio);
 	    String expectedName = "Гомес де ла Серна";
 	    String actualsName=s.getLastName();
+	    long id=Thread.currentThread().getId();
+	    System.out.println("thread="+id);
 	    assertEquals(expectedName, actualsName);	
 	  }
 	  
@@ -112,6 +132,8 @@ public class StudentTest {
 		s.setLastName(fio);
 	    String expectedName = "Ivanov";
 	    String actualsName=s.getLastName();
+	    long id=Thread.currentThread().getId();
+	    System.out.println("thread="+id);
 	    assertEquals(expectedName, actualsName);	
 	  }
 	  
@@ -123,6 +145,8 @@ public class StudentTest {
 		s.setLastName(fio);
 	    String expectedName = "True";
 	    String actualsName=s.getLastName();
+	    long id=Thread.currentThread().getId();
+	    System.out.println("thread="+id);
 	    assertEquals(expectedName, actualsName);	
 	  }
 	  
@@ -133,6 +157,8 @@ public class StudentTest {
 		s.setLastName(fio);
 	    String expectedName = "Id12345";
 	    String actualsName=s.getLastName();
+	    long id=Thread.currentThread().getId();
+	    System.out.println("thread="+id);
 	    assertEquals(expectedName, actualsName);	
 	  }
 	  
@@ -143,6 +169,8 @@ public class StudentTest {
 		s.setLastName(fio);
 	    String expectedName = "";
 	    String actualsName=s.getLastName();
+	    long id=Thread.currentThread().getId();
+	    System.out.println("thread="+id);
 	    assertEquals(expectedName, actualsName);	
 	  }
 	  
@@ -154,6 +182,8 @@ public class StudentTest {
 		s.setFirstName(imena);
 	    String expectedName = "Анна-Мария";
 	    String actualsName=s.getFirstName();
+	    long id=Thread.currentThread().getId();
+	    System.out.println("thread="+id);
 	    assertEquals(expectedName, actualsName);	
 	  }
 	  
@@ -164,6 +194,8 @@ public class StudentTest {
 		s.setFirstName(imena);
 	    String expectedName = "Флоренс Луиза";
 	    String actualsName=s.getFirstName();
+	    long id=Thread.currentThread().getId();
+	    System.out.println("thread="+id);
 	    assertEquals(expectedName, actualsName);	
 	  } 
 	  
@@ -174,6 +206,8 @@ public class StudentTest {
 		s.setFirstName(imena);
 	    String expectedName = "Anna";
 	    String actualsName=s.getFirstName();
+	    long id=Thread.currentThread().getId();
+	    System.out.println("thread="+id);
 	    assertEquals(expectedName, actualsName);	
 	  } 
 	  
@@ -184,6 +218,8 @@ public class StudentTest {
 		s.setFirstName(imena);
 	    String expectedName = "";
 	    String actualsName=s.getFirstName();
+	    long id=Thread.currentThread().getId();
+	    System.out.println("thread="+id);
 	    assertEquals(expectedName, actualsName);	
 	  }
 	  
@@ -194,6 +230,8 @@ public class StudentTest {
 		s.setFirstName(imena);
 	    String expectedName = "   ";
 	    String actualsName=s.getFirstName();
+	    long id=Thread.currentThread().getId();
+	    System.out.println("thread="+id);
 	    assertEquals(expectedName, actualsName);	
 	  }
 	  
@@ -204,6 +242,8 @@ public class StudentTest {
 		s.setFirstName(imena);
 	    String expectedName = "Vvedite name verno";
 	    String actualsName=s.getFirstName();
+	    long id=Thread.currentThread().getId();
+	    System.out.println("thread="+id);
 	    assertEquals(expectedName, actualsName);	
 	  }
 	  

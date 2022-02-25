@@ -7,55 +7,75 @@ public class NewTestNG {
     	  
   @Test()	  
 	  public void test1() {
-	  System.out.println("test1");
+	  long id=Thread.currentThread().getId();
+	  System.out.print("thread="+id);	
+	  System.out.println("  test1");
   }
   
   @Test()	  
   public void test2() {
-  System.out.println("test2");
+	  long id=Thread.currentThread().getId();
+	  System.out.print("thread="+id);		  
+  System.out.println("  test2");
 }
   
   @BeforeMethod()	  
   public void testBeforeMethod() {
-  System.out.println("BeforeMethod");
+	  long id=Thread.currentThread().getId();
+	  System.out.print("thread="+id);	
+  System.out.println("  BeforeMethod");
 }
   
   @AfterMethod()	  
   public void testAfterMethod() {
-  System.out.println("AfterMethod");
+	  long id=Thread.currentThread().getId();
+	  System.out.print("thread="+id);	
+  System.out.println("  AfterMethod");
 }
   
   
   @BeforeClass()	  
   public void testBeforeClass() {
-  System.out.println("BeforeClass");
+	  long id=Thread.currentThread().getId();
+	  System.out.print("thread="+id);	
+  System.out.println("  BeforeClass");
 }
   
   @AfterClass()	  
   public void testAfterClass() {
-  System.out.println("AfterClass");
+	  long id=Thread.currentThread().getId();
+	  System.out.print("thread="+id);	
+  System.out.println("  AfterClass");
 }
   
   
   @BeforeTest()	  
   public void testBeforeTest() {
-  System.out.println("BeforeTest");
+	  long id=Thread.currentThread().getId();
+	  System.out.print("thread="+id);	
+  System.out.println("  BeforeTest");
 }
   
   @AfterTest()	  
   public void testAfterTest() {
-  System.out.println("AfterTest");
+	  long id=Thread.currentThread().getId();
+	  System.out.print("thread="+id);	
+  System.out.println("  AfterTest");
 }
   
   
   @BeforeSuite()	  
   public void testBeforeSuite() {
-  System.out.println("BeforeSuite");
+	  long id=Thread.currentThread().getId();
+	  System.out.print("thread="+id);	
+  System.out.println("  BeforeSuite");
 }
   
   @AfterSuite()	  
   public void testAfterSuite() {
-  System.out.println("AfterSuite");
+	  long id=Thread.currentThread().getId();
+	  System.out.print("thread="+id);	
+  System.out.println("  AfterSuite");
 }
   
   

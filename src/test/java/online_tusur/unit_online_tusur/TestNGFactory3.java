@@ -36,7 +36,7 @@ class MyTest	{
 			{new Student("sacha", "ivanov", -99), new Student("anna", "Nesterova", 0), new Student("Gleb", "Petrov", 99)}
 		};
 	}
-/*нащи данные будем передавать конструктору*/
+
 	
 @Test(dataProvider="MyTestProvider")
 	public void students(Student s1, Student s2, Student s3 )

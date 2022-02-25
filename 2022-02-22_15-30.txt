@@ -1,0 +1,7 @@
+Отчет
+Success of test cases and its details are : testAge1
+Success of test cases and its details are : testEmptyCollection
+Success of test cases and its details are : testItemCollection
+Success of test cases and its details are : testNotEmptyCollection
+This is onFinish Passed method4
+This is onFinish Failed method0
