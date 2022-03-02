@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ru"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../jacoco-resources/report.gif" type="image/gif"/><title>TestNGparamZadanie5.java</title><link rel="stylesheet" href="../../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">unit-online-tusur_testng.xml (02.03.2022 9:18:29)</a> &gt; <a href="../../index.html" class="el_group">unit-online-tusur</a> &gt; <a href="../index.html" class="el_bundle">src/test/java</a> &gt; <a href="index.source.html" class="el_package">online_tusur.unit_online_tusur</a> &gt; <span class="el_source">TestNGparamZadanie5.java</span></div><h1>TestNGparamZadanie5.java</h1><pre class="source lang-java linenums">/*параметризированные тесты*/
+/*Практическое задание 5. Параметризированные тесты в TestNG*/
+package online_tusur.unit_online_tusur;
+import static org.testng.Assert.assertEquals;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Optional;
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
+
+<span class="nc" id="L10">public class TestNGparamZadanie5 {</span>
+ 
+	
+	//параметры передаём через конфигурационный файл
+	/*в этом тесте каждому возрасту должно возвращаться 18, поэтому среднее значение  должно быть 18*/
+	 
+	  @Test
+	  @Parameters({&quot;ag1&quot;,&quot;ag2&quot;,&quot;ag3&quot;})
+	  public void paramsAge(@Optional(&quot;0&quot;)int ag1,@Optional(&quot;0&quot;)int ag2,@Optional(&quot;0&quot;)int ag3) {
+<span class="nc" id="L19">		  Student s1 = new Student();</span>
+<span class="nc" id="L20">		  Student s2 = new Student();</span>
+<span class="nc" id="L21">		  Student s3 = new Student();</span>
+<span class="nc" id="L22">		   s1.setAge(ag1);</span>
+<span class="nc" id="L23">		   s2.setAge(ag2);</span>
+<span class="nc" id="L24">		   s3.setAge(ag3);</span>
+<span class="nc" id="L25">		   Student[] students = { s1,s2,s3};</span>
+<span class="nc" id="L26">		   int agsr=Student.avgAge(students);</span>
+<span class="nc" id="L27">		   assertEquals( 18 , agsr);</span>
+<span class="nc" id="L28">		     }</span>
+	
+	  //параметры передаём через провайдер
+	  @DataProvider(name=&quot;Mydata&quot;)
+		public static Object[][] getData()
+		{
+<span class="nc" id="L34">		return new Object[][] {</span>
+<span class="nc" id="L35">			{&quot;petr&quot;,&quot;Petr&quot;,&quot;petrov-vodkin&quot;,&quot;Petrov-Vodkin&quot;,18},</span>
+<span class="nc" id="L36">			{&quot;ivan&quot;,&quot;Ivan&quot;,&quot;ivanov&quot;,&quot;Ivanov&quot;,10},</span>
+<span class="nc" id="L37">			{&quot;sidor&quot;,&quot;Sidor&quot;,&quot;sidorov&quot;,&quot;Sidorov&quot;,50}	,};</span>
+		}
+	  @Test(dataProvider=&quot;Mydata&quot;)
+		void testNames (String firstname,String ExpectedName,String secondname,String ExpectedSurname,int age)
+		{ 
+<span class="nc" id="L42">		  Student s=new Student();</span>
+<span class="nc" id="L43">		  s.setFirstName(firstname);</span>
+<span class="nc" id="L44">		  s.setLastName(secondname);</span>
+<span class="nc" id="L45">		  s.setAge(age);</span>
+<span class="nc" id="L46">		  String actual_name=s.getFirstName();</span>
+<span class="nc" id="L47">		  String actual_surname=s.getLastName();</span>
+<span class="nc" id="L48">		  int actual_age=s.getAge();</span>
+<span class="nc" id="L49">			assertEquals(ExpectedName,actual_name);</span>
+<span class="nc" id="L50">			assertEquals(ExpectedSurname,actual_surname);</span>
+<span class="nc" id="L51">			assertEquals(18,actual_age);</span>
+	  
+<span class="nc" id="L53">		}</span>
+	
+	
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span>unit-online-tusur_testng.xml (02.03.2022 9:18:29)</div></body></html>

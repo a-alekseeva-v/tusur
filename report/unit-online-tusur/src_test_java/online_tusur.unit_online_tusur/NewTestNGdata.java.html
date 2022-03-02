@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ru"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../jacoco-resources/report.gif" type="image/gif"/><title>NewTestNGdata.java</title><link rel="stylesheet" href="../../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">unit-online-tusur_testng.xml (02.03.2022 9:18:29)</a> &gt; <a href="../../index.html" class="el_group">unit-online-tusur</a> &gt; <a href="../index.html" class="el_bundle">src/test/java</a> &gt; <a href="index.source.html" class="el_package">online_tusur.unit_online_tusur</a> &gt; <span class="el_source">NewTestNGdata.java</span></div><h1>NewTestNGdata.java</h1><pre class="source lang-java linenums">//пример2 тест NG
+//параметры берутся из провайдера
+/*@DataProvider позволяет запускать одни и те же тестовые методы множество раз с разными наборами данных.*/
+package online_tusur.unit_online_tusur;
+import org.testng.annotations.Test;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Factory;
+
+public class NewTestNGdata {
+	private int k;
+	//контсруктор тестового класса помечен аннотацией фабрика
+	@Factory(dataProvider=&quot;dataMethod&quot;)
+<span class="nc" id="L13">	public NewTestNGdata(int param) </span>
+<span class="nc" id="L14">    {  this.k=param; }</span>
+	//аннотация фабрика использует data провайдер, то есть данные из метода dataMethod
+	@DataProvider
+	public static Object[][] dataMethod () {
+		
+<span class="nc" id="L19">	return new Object[][] {{0},{1}};</span>
+				}
+	 @Test
+	  public void SimpleTest1() {
+<span class="nc" id="L23">		  System.out.println(&quot;test1 method&quot;+(k+1));</span>
+		  
+<span class="nc" id="L25">	  }</span>
+	  
+	  @Test
+	  public void SimpleTest2() {
+<span class="nc" id="L29">		  System.out.println(&quot;test2 method&quot;+(k+2));</span>
+<span class="nc" id="L30">	  }</span>
+	}	
+	
+	
+	
+	
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span>unit-online-tusur_testng.xml (02.03.2022 9:18:29)</div></body></html>

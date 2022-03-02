@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ru"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../jacoco-resources/report.gif" type="image/gif"/><title>NewTestNG.java</title><link rel="stylesheet" href="../../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">unit-online-tusur_testng.xml (02.03.2022 9:18:29)</a> &gt; <a href="../../index.html" class="el_group">unit-online-tusur</a> &gt; <a href="../index.html" class="el_bundle">src/test/java</a> &gt; <a href="index.source.html" class="el_package">online_tusur.unit_online_tusur</a> &gt; <span class="el_source">NewTestNG.java</span></div><h1>NewTestNG.java</h1><pre class="source lang-java linenums">/*тест NG,Основные аннотации */
+package online_tusur.unit_online_tusur;
+
+import org.testng.annotations.* ;
+
+<span class="nc" id="L6">public class NewTestNG {</span>
+    	  
+  @Test()	  
+	  public void test1() {
+<span class="nc" id="L10">	  long id=Thread.currentThread().getId();</span>
+<span class="nc" id="L11">	  System.out.print(&quot;thread=&quot;+id);	</span>
+<span class="nc" id="L12">	  System.out.println(&quot;  test1&quot;);</span>
+<span class="nc" id="L13">  }</span>
+  
+  @Test()	  
+  public void test2() {
+<span class="nc" id="L17">	  long id=Thread.currentThread().getId();</span>
+<span class="nc" id="L18">	  System.out.print(&quot;thread=&quot;+id);		  </span>
+<span class="nc" id="L19">  System.out.println(&quot;  test2&quot;);</span>
+<span class="nc" id="L20">}</span>
+  
+  @BeforeMethod()	  
+  public void testBeforeMethod() {
+<span class="nc" id="L24">	  long id=Thread.currentThread().getId();</span>
+<span class="nc" id="L25">	  System.out.print(&quot;thread=&quot;+id);	</span>
+<span class="nc" id="L26">  System.out.println(&quot;  BeforeMethod&quot;);</span>
+<span class="nc" id="L27">}</span>
+  
+  @AfterMethod()	  
+  public void testAfterMethod() {
+<span class="nc" id="L31">	  long id=Thread.currentThread().getId();</span>
+<span class="nc" id="L32">	  System.out.print(&quot;thread=&quot;+id);	</span>
+<span class="nc" id="L33">  System.out.println(&quot;  AfterMethod&quot;);</span>
+<span class="nc" id="L34">}</span>
+  
+  
+  @BeforeClass()	  
+  public void testBeforeClass() {
+<span class="nc" id="L39">	  long id=Thread.currentThread().getId();</span>
+<span class="nc" id="L40">	  System.out.print(&quot;thread=&quot;+id);	</span>
+<span class="nc" id="L41">  System.out.println(&quot;  BeforeClass&quot;);</span>
+<span class="nc" id="L42">}</span>
+  
+  @AfterClass()	  
+  public void testAfterClass() {
+<span class="nc" id="L46">	  long id=Thread.currentThread().getId();</span>
+<span class="nc" id="L47">	  System.out.print(&quot;thread=&quot;+id);	</span>
+<span class="nc" id="L48">  System.out.println(&quot;  AfterClass&quot;);</span>
+<span class="nc" id="L49">}</span>
+  
+  
+  @BeforeTest()	  
+  public void testBeforeTest() {
+<span class="nc" id="L54">	  long id=Thread.currentThread().getId();</span>
+<span class="nc" id="L55">	  System.out.print(&quot;thread=&quot;+id);	</span>
+<span class="nc" id="L56">  System.out.println(&quot;  BeforeTest&quot;);</span>
+<span class="nc" id="L57">}</span>
+  
+  @AfterTest()	  
+  public void testAfterTest() {
+<span class="nc" id="L61">	  long id=Thread.currentThread().getId();</span>
+<span class="nc" id="L62">	  System.out.print(&quot;thread=&quot;+id);	</span>
+<span class="nc" id="L63">  System.out.println(&quot;  AfterTest&quot;);</span>
+<span class="nc" id="L64">}</span>
+  
+  
+  @BeforeSuite()	  
+  public void testBeforeSuite() {
+<span class="nc" id="L69">	  long id=Thread.currentThread().getId();</span>
+<span class="nc" id="L70">	  System.out.print(&quot;thread=&quot;+id);	</span>
+<span class="nc" id="L71">  System.out.println(&quot;  BeforeSuite&quot;);</span>
+<span class="nc" id="L72">}</span>
+  
+  @AfterSuite()	  
+  public void testAfterSuite() {
+<span class="nc" id="L76">	  long id=Thread.currentThread().getId();</span>
+<span class="nc" id="L77">	  System.out.print(&quot;thread=&quot;+id);	</span>
+<span class="nc" id="L78">  System.out.println(&quot;  AfterSuite&quot;);</span>
+<span class="nc" id="L79">}</span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span>unit-online-tusur_testng.xml (02.03.2022 9:18:29)</div></body></html>

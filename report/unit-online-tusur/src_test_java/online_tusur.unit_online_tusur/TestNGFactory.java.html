@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ru"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../jacoco-resources/report.gif" type="image/gif"/><title>TestNGFactory.java</title><link rel="stylesheet" href="../../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">unit-online-tusur_testng.xml (02.03.2022 9:18:29)</a> &gt; <a href="../../index.html" class="el_group">unit-online-tusur</a> &gt; <a href="../index.html" class="el_bundle">src/test/java</a> &gt; <a href="index.source.html" class="el_package">online_tusur.unit_online_tusur</a> &gt; <span class="el_source">TestNGFactory.java</span></div><h1>TestNGFactory.java</h1><pre class="source lang-java linenums">/*Тест NG.
+ * * Практическое задание 6. Фабрики тестов в TestNG
+ * Проверяем , что возвращают геттеры
+ * Создадим фабрику. Фабрика и конструктор создаются отдельно.*/
+package online_tusur.unit_online_tusur;
+
+import org.testng.Assert;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Factory;
+import org.testng.annotations.Test;
+
+<span class="nc" id="L12">public class TestNGFactory {</span>
+//будем использовать фабричный метод	
+@Factory public Object[] TestFactory()
+<span class="nc" id="L15"> { return new Object[] {new FirstNameTest()	};</span>
+ 
+ 
+ }}
+	
+//создаём класс, где будем прописывать тесты	
+<span class="nc" id="L21">class FirstNameTest	{</span>
+	
+	@DataProvider(name=&quot;firstNameProvider&quot;,parallel=true)
+	public Object[][] firstNameProvider()
+	{
+<span class="nc" id="L26">		return new Object[][] {</span>
+<span class="nc" id="L27">			{&quot;Ivanov&quot;,&quot;Alex&quot;, 18,new Student(&quot;Alex&quot;,&quot;Ivanov&quot;,10)},</span>
+<span class="nc" id="L28">			{&quot;Petrov&quot;,&quot;Piter&quot;, 35,new Student(&quot;Piter&quot;,&quot;Petrov&quot;,35)},</span>
+<span class="nc" id="L29">			{&quot;Silvian&quot;,&quot;Roza Flora Luna&quot;, 18,new Student(&quot;Roza Flora Luna&quot;, &quot;Silvian&quot;, 17)},</span>
+<span class="nc" id="L30">			{&quot;Ivanov&quot;,&quot;Ivan&quot;, 18,new Student(&quot;ivan&quot;, &quot;ivanov&quot;, 18)},</span>
+<span class="nc" id="L31">			{&quot;Saltykov-Shedrin&quot;,&quot;Mike&quot;, 50,new Student(&quot;Mike&quot;, &quot;Saltykov-Shedrin&quot;, 50)},</span>
+<span class="nc" id="L32">			{&quot;Sil de Royz&quot;,&quot;Anna-Maria&quot;, 18,new Student(&quot;Anna-Maria&quot;, &quot;Sil de Royz&quot;, 51)}</span>
+		};
+	}
+	
+@Test(dataProvider=&quot;firstNameProvider&quot;, threadPoolSize=4)
+	public void firstName(String surname,String name,int age, Student t )
+<span class="nc" id="L38">	{	long id=Thread.currentThread().getId();</span>
+<span class="nc" id="L39">    System.out.print(&quot;first name   &quot;);</span>
+<span class="nc" id="L40">	System.out.println(&quot;thread=&quot;+id);	</span>
+    
+<span class="nc" id="L42">	Assert.assertEquals(name, t.getFirstName());</span>
+
+<span class="nc" id="L44">	}</span>
+@Test(dataProvider=&quot;firstNameProvider&quot;, threadPoolSize=4)
+public void SecondName(String surname,String name,int age, Student t )
+<span class="nc" id="L47">{long id=Thread.currentThread().getId();</span>
+<span class="nc" id="L48">System.out.print(&quot;second name    &quot;);</span>
+<span class="nc" id="L49">System.out.println(&quot;thread=&quot;+id);	</span>
+<span class="nc" id="L50">Assert.assertEquals(surname, t.getLastName());</span>
+	
+<span class="nc" id="L52">}</span>
+@Test(dataProvider=&quot;firstNameProvider&quot;, threadPoolSize=4)
+public void age_student(String surname,String name,int age, Student t )
+<span class="nc" id="L55">{	long id=Thread.currentThread().getId();</span>
+<span class="nc" id="L56">System.out.print(&quot;age    &quot;);</span>
+<span class="nc" id="L57">System.out.println(&quot;thread=&quot;+id);	</span>
+<span class="nc" id="L58">Assert.assertEquals(age, t.getAge());</span>
+
+<span class="nc" id="L60">}</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span>unit-online-tusur_testng.xml (02.03.2022 9:18:29)</div></body></html>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ru"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../jacoco-resources/report.gif" type="image/gif"/><title>TestNGFactory3.java</title><link rel="stylesheet" href="../../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">unit-online-tusur_testng.xml (02.03.2022 9:18:29)</a> &gt; <a href="../../index.html" class="el_group">unit-online-tusur</a> &gt; <a href="../index.html" class="el_bundle">src/test/java</a> &gt; <a href="index.source.html" class="el_package">online_tusur.unit_online_tusur</a> &gt; <span class="el_source">TestNGFactory3.java</span></div><h1>TestNGFactory3.java</h1><pre class="source lang-java linenums">/*Тест NG.
+ * Практическое задание 6. Фабрики тестов в TestNG
+ * проверяем, что правильность нахождения: средний возраст, максимальный и минимальный возраст.
+  * Создадим фабрику. Фабрика и конструктор создаются отдельно.*/
+package online_tusur.unit_online_tusur;
+
+import org.testng.Assert;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Factory;
+import org.testng.annotations.Test;
+
+<span class="nc" id="L12">public class TestNGFactory3 {</span>
+//будем использовать фабричный метод	
+@Factory public Object[] TestFactory()
+<span class="nc" id="L15"> { return new Object[] {new MyTest()	};</span>
+ 
+ 
+ }}
+	
+//создаём класс, где будем прописывать тесты	
+<span class="nc" id="L21">class MyTest	{</span>
+	
+	private Student[] studenties;
+	private int minimum;
+	private int maximum;
+
+	@DataProvider(name=&quot;MyTestProvider&quot;)
+	public Object[][] MyTestProvider()
+	{
+<span class="nc" id="L30">		return new Object[][] {</span>
+<span class="nc" id="L31">			{new Student(&quot;Sergey&quot;, &quot;Nasedkin&quot;, 0), new Student(&quot;Ivan&quot;, &quot;Nesterov&quot;, 1), new Student(&quot;polina&quot;, &quot;tukina&quot;, 10)},</span>
+<span class="nc" id="L32">			{new Student(&quot;ivan&quot;, &quot;Silvian&quot;, 17), new Student(&quot;IvaN&quot;, &quot;Nesterov-Shepkin&quot;, 18), new Student(&quot;Gleba&quot;, &quot;Petrova&quot;, 25)},</span>
+<span class="nc" id="L33">			{new Student(&quot;maksim&quot;, &quot;Petrov&quot;, 35), new Student(&quot;ivAn&quot;, &quot;nestErov&quot;, 50), new Student(&quot;roza&quot;, &quot;rozova&quot;, 51)},</span>
+<span class="nc" id="L34">			{new Student(&quot;mike&quot;, &quot;Saltykov-Shedrin&quot;, 99), new Student(&quot;ivan de ivan&quot;, &quot;Pupkin&quot;, 98), new Student(&quot;Roza Flora Luna&quot;, &quot;Lopez&quot;, 100)},</span>
+<span class="nc" id="L35">			{new Student(&quot;Anna-Maria&quot;, &quot;Sil de Royz&quot;, 25), new Student(&quot;Ivan-Vandam&quot;, &quot;sterov&quot;, 35), new Student(&quot;pasha&quot;, &quot;Petrov&quot;, 45)},</span>
+<span class="nc" id="L36">			{new Student(&quot;sacha&quot;, &quot;ivanov&quot;, -99), new Student(&quot;anna&quot;, &quot;Nesterova&quot;, 0), new Student(&quot;Gleb&quot;, &quot;Petrov&quot;, 99)}</span>
+		};
+	}
+
+	
+@Test(dataProvider=&quot;MyTestProvider&quot;)
+	public void students(Student s1, Student s2, Student s3 )
+	{	
+<span class="nc" id="L44">	studenties = new Student[] { s1,s2,s3};</span>
+<span class="nc" id="L45">	int ag1=s1.getAge();</span>
+<span class="nc" id="L46">	int ag2=s2.getAge();</span>
+<span class="nc" id="L47">	int ag3=s3.getAge();</span>
+<span class="nc" id="L48">	Assert.assertEquals((ag1+ag2+ag3)/3, Student.avgAge(studenties));</span>
+<span class="nc" id="L49">    minimum = ag1;</span>
+<span class="nc" id="L50">    maximum = ag1;</span>
+<span class="nc bnc" id="L51" title="All 2 branches missed.">    if(minimum&gt;ag2) minimum=ag2;</span>
+<span class="nc bnc" id="L52" title="All 2 branches missed.">    if(minimum&gt;ag3) minimum=ag3;</span>
+<span class="nc bnc" id="L53" title="All 2 branches missed.">    if (maximum&lt;ag2) maximum=ag2;</span>
+<span class="nc bnc" id="L54" title="All 2 branches missed.">    if (maximum&lt;ag3) maximum=ag3;</span>
+<span class="nc" id="L55">    Assert.assertEquals(minimum, Student.minAge(studenties));</span>
+<span class="nc" id="L56">    Assert.assertEquals(maximum, Student.maxAge(studenties));</span>
+        
+<span class="nc" id="L58">	}</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span>unit-online-tusur_testng.xml (02.03.2022 9:18:29)</div></body></html>

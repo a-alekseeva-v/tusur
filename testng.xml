@@ -3,8 +3,8 @@
 <suite name="Suite" parallel="tests" thread-count="4">
   <test parallel="methods" thread-count="4" name="Test">
 <parameter name="a" value="30"></parameter>
-  <parameter name="fn" value="piter"></parameter> 
-  <parameter name="sn" value="men"></parameter>
+  <parameter name="fn" value=""></parameter> 
+  <parameter name="sn" value=""></parameter>
   <parameter name="ag1" value="17"></parameter>
   <parameter name="ag2" value="18"></parameter>
   <parameter name="ag3" value="51"></parameter>
@@ -13,7 +13,11 @@
   
     <classes>
   
-      <class name="online_tusur.unit_online_tusur.TestNGFactory2"/>
+      <class name="online_tusur.unit_online_tusur.StudentTest"/>
+        <class name="online_tusur.unit_online_tusur.TestMain"/>
+        <class name="online_tusur.unit_online_tusur.NewTestNGparam"/>
+     
+       
      
     </classes>
   </test> <!-- Test -->

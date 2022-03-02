@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>4/0/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>3/2/0</td>
 </tr><tr>
-<td>Started on:</td><td>Fri Feb 25 13:00:12 GMT+07:00 2022</td>
+<td>Started on:</td><td>Wed Mar 02 09:39:15 GMT+07:00 2022</td>
 </tr>
-<tr><td>Total time:</td><td>0 seconds (66 ms)</td>
+<tr><td>Total time:</td><td>0 seconds (129 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,6 +67,98 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='online_tusur.unit_online_tusur.TestMain.testMain()'><b>testMain</b><br>Test class: online_tusur.unit_online_tusur.TestMain</td>
+<td><div><pre>java.lang.AssertionError: expected [Вёселова Матрёна, 24
+Nikulin Ivan, 18
+Petrov Konstantin, 18
+AVG= 24
+MAX= 24
+MIN= 18
+] but found [Ivan Ivanov
+MAX=25
+]
+	at online_tusur.unit_online_tusur.TestMain.testMain(TestMain.java:39)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+... Removed 18 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1009222284", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1009222284'><pre>java.lang.AssertionError: expected [Вёселова Матрёна, 24
+Nikulin Ivan, 18
+Petrov Konstantin, 18
+AVG= 24
+MAX= 24
+MIN= 18
+] but found [Ivan Ivanov
+MAX=25
+]
+	at org.testng.Assert.fail(Assert.java:99)
+	at org.testng.Assert.failNotEquals(Assert.java:1037)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:140)
+	at org.testng.Assert.assertEquals(Assert.java:122)
+	at org.testng.Assert.assertEquals(Assert.java:629)
+	at org.testng.Assert.assertEquals(Assert.java:639)
+	at online_tusur.unit_online_tusur.TestMain.testMain(TestMain.java:39)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+</pre></div></td>
+<td>0</td>
+<td>online_tusur.unit_online_tusur.TestMain@c755b2</td></tr>
+<tr>
+<td title='online_tusur.unit_online_tusur.NewTestNGparam.params()'><b>params</b><br>Test class: online_tusur.unit_online_tusur.NewTestNGparam<br>Parameters: 30, , </td>
+<td><div><pre>java.lang.AssertionError: expected [ ] but found [Men Piter]
+	at online_tusur.unit_online_tusur.NewTestNGparam.params(NewTestNGparam.java:41)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+... Removed 18 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace311810152", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace311810152'><pre>java.lang.AssertionError: expected [ ] but found [Men Piter]
+	at org.testng.Assert.fail(Assert.java:99)
+	at org.testng.Assert.failNotEquals(Assert.java:1037)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:140)
+	at org.testng.Assert.assertEquals(Assert.java:122)
+	at org.testng.Assert.assertEquals(Assert.java:629)
+	at org.testng.Assert.assertEquals(Assert.java:639)
+	at online_tusur.unit_online_tusur.NewTestNGparam.params(NewTestNGparam.java:41)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+</pre></div></td>
+<td>0</td>
+<td>online_tusur.unit_online_tusur.NewTestNGparam@a5272be</td></tr>
+</table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
@@ -75,25 +167,20 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='online_tusur.unit_online_tusur.NewTestNG1.testNotEmptyCollection()'><b>testNotEmptyCollection</b><br>Test class: online_tusur.unit_online_tusur.NewTestNG1</td>
+<td title='online_tusur.unit_online_tusur.NewTestNGparam.testNames()'><b>testNames</b><br>Test class: online_tusur.unit_online_tusur.NewTestNGparam<br>Parameters: ivan, Ivan</td>
 <td></td>
 <td>0</td>
-<td>online_tusur.unit_online_tusur.NewTestNG1@631330c</td></tr>
+<td>online_tusur.unit_online_tusur.NewTestNGparam@a5272be</td></tr>
 <tr>
-<td title='online_tusur.unit_online_tusur.NewTestNG1.testItemCollection()'><b>testItemCollection</b><br>Test class: online_tusur.unit_online_tusur.NewTestNG1</td>
+<td title='online_tusur.unit_online_tusur.NewTestNGparam.testNames()'><b>testNames</b><br>Test class: online_tusur.unit_online_tusur.NewTestNGparam<br>Parameters: sidor, Sidor</td>
 <td></td>
 <td>0</td>
-<td>online_tusur.unit_online_tusur.NewTestNG1@631330c</td></tr>
+<td>online_tusur.unit_online_tusur.NewTestNGparam@a5272be</td></tr>
 <tr>
-<td title='online_tusur.unit_online_tusur.NewTestNG1.testAge1()'><b>testAge1</b><br>Test class: online_tusur.unit_online_tusur.NewTestNG1</td>
+<td title='online_tusur.unit_online_tusur.NewTestNGparam.testNames()'><b>testNames</b><br>Test class: online_tusur.unit_online_tusur.NewTestNGparam<br>Parameters: petr, Petr</td>
 <td></td>
 <td>0</td>
-<td>online_tusur.unit_online_tusur.NewTestNG1@631330c</td></tr>
-<tr>
-<td title='online_tusur.unit_online_tusur.NewTestNG1.testEmptyCollection()'><b>testEmptyCollection</b><br>Test class: online_tusur.unit_online_tusur.NewTestNG1</td>
-<td></td>
-<td>0</td>
-<td>online_tusur.unit_online_tusur.NewTestNG1@631330c</td></tr>
+<td>online_tusur.unit_online_tusur.NewTestNGparam@a5272be</td></tr>
 </table><p>
 </body>
 </html>

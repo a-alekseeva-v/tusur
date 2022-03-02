@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ru"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../jacoco-resources/report.gif" type="image/gif"/><title>NewTestNGparam.java</title><link rel="stylesheet" href="../../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">unit-online-tusur_testng.xml (02.03.2022 9:18:29)</a> &gt; <a href="../../index.html" class="el_group">unit-online-tusur</a> &gt; <a href="../index.html" class="el_bundle">src/test/java</a> &gt; <a href="index.source.html" class="el_package">online_tusur.unit_online_tusur</a> &gt; <span class="el_source">NewTestNGparam.java</span></div><h1>NewTestNGparam.java</h1><pre class="source lang-java linenums">/*параметризированные тесты*/
+/*тестNG позволяет пользователям передавать значения параметров тестовым методам как аргументы. 
+ * Это возможно сделать с помощью аннотации @Parameters*/
+
+package online_tusur.unit_online_tusur;
+import static org.testng.Assert.assertEquals;
+
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Optional;
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
+
+
+//параметры через провайдер
+<span class="fc" id="L15">public class NewTestNGparam {</span>
+	
+	@DataProvider(name=&quot;data&quot;)
+	public static Object[][] getData()
+	{
+<span class="fc" id="L20">	return new Object[][] {</span>
+<span class="fc" id="L21">		{&quot;petr&quot;,&quot;Petr&quot;},</span>
+<span class="fc" id="L22">		{&quot;ivan&quot;,&quot;Ivan&quot;},</span>
+<span class="fc" id="L23">		{&quot;sidor&quot;,&quot;Sidor&quot;}	,};</span>
+	}
+	
+	@Test(dataProvider=&quot;data&quot;)
+	void testNames (String input,String ExpectedName)
+<span class="fc" id="L28">	{ Student s=new Student();</span>
+<span class="fc" id="L29">	  s.setFirstName(input);</span>
+<span class="fc" id="L30">		String actual=s.getFirstName();</span>
+<span class="fc" id="L31">		assertEquals(ExpectedName,actual);</span>
+<span class="fc" id="L32">	}</span>
+	//параметры передаём через конфигурационный файл	
+  @Test
+  @Parameters({&quot;a&quot;,&quot;fn&quot;,&quot;sn&quot;})
+  public void params(@Optional(&quot;0&quot;)int a,@Optional(&quot;null&quot;)String fn,@Optional(&quot;null&quot;)String sn) {
+<span class="fc" id="L37">     Student p= new Student();</span>
+<span class="fc" id="L38">     p.setAge(a);</span>
+<span class="fc" id="L39">     p.setFirstName(fn);</span>
+<span class="fc" id="L40">     p.setLastName(sn);</span>
+<span class="nc" id="L41">     assertEquals(&quot;Men Piter&quot;, p.getFullName());</span>
+     
+  
+  
+<span class="nc" id="L45">  }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span>unit-online-tusur_testng.xml (02.03.2022 9:18:29)</div></body></html>
